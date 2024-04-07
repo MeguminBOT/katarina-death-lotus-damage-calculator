@@ -1,0 +1,19 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+input, button {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: #b3b3b3;
+}
