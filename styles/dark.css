@@ -1,6 +1,11 @@
-body {
-    background-color: #121212;
-    color: #ffffff;
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+.home {
+    background: #333333;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+	line-height: 1.75em;
+	font-size: 16px;
 }
 
 input, button {
