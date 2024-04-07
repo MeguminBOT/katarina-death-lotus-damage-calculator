@@ -3,3 +3,5 @@
 
 A small website and tool to quickly calculate damage of Katarina's "Death Lotus" ultimate ability.
 Nothing fancy.
+
+## https://meguminbot.github.io/katarina-death-lotus-damage-calculator/
