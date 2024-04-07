@@ -1,54 +1,16 @@
 <!DOCTYPE html>
-<html>
-<body>
-
-<h2>Katarina Death Lotus Damage Calculator</h2>
-<p>Enter your bonus AD and AS% to calculate the total damage.</p>
-<p>Tool does not take level increased stats into consideration</p>
-
-Bonus AD: <input type="text" id="bonus_ad" value="Bonus AD"><br><br>
-AS%: <input type="text" id="bonus_as" value="AS%"><br><br>
-
-<button onclick="calculateAndDisplay()">Calculate</button>
-
-<p id="result"></p>
-
-<script>
-function calculateAndDisplay() {
-    const baseAttackSpeed = 0.658;
-    const attackSpeedRatio = 0.658;
-    const abilityDuration = 2.5;
-    const abilityInterval = 0.166;
-    const hits = abilityDuration / abilityInterval;
-
-    let bonusAd = parseFloat(document.getElementById('bonus_ad').value);
-    let bonusAsPercent = parseFloat(document.getElementById('bonus_as').value.replace('%', ''));
-
-    let bonusAsMultiplier = bonusAsPercent / 100;
-    let modifiedValue = bonusAsMultiplier * attackSpeedRatio;
-    let totalAttackSpeed = baseAttackSpeed + modifiedValue;
-
-    let damageMultiplier = 0.16 * (1 + 3.125 * bonusAsPercent / 100);
-    let totalDamage = damageMultiplier * bonusAd;
-    let totalDamageSum = totalDamage * hits;
-
-    let totalDamageAdPlus10 = calculateDeathLotusDamage(bonusAd + 10, bonusAsPercent);
-    let totalDamageSumAdPlus10 = totalDamageAdPlus10 * hits;
-
-    let totalDamageAsPlus10 = calculateDeathLotusDamage(bonusAd, bonusAsPercent + 12);
-    let totalDamageSumAsPlus10 = totalDamageAsPlus10 * hits;
-
-    document.getElementById('result').innerHTML = `Total damage: ${totalDamageSum}<br>
-                                                    Total damage with 10 more bonus AD: ${totalDamageSumAdPlus10}<br>
-                                                    Total damage with 12% more attack speed: ${totalDamageSumAsPlus10}`;
-}
-
-function calculateDeathLotusDamage(bonusAd, bonusAsPercent) {
-    let damageMultiplier = 0.16 * (1 + 3.125 * bonusAsPercent / 100);
-    let totalDamage = damageMultiplier * bonusAd;
-    return totalDamage;
-}
-</script>
-
-</body>
+<html lang="en">
+    <head>
+        <title>Katarina Death Lotus Damage Calculator</title>
+    </head>
+    <body class="home" id="home">
+        <h1>Katarina Death Lotus Damage Calculator</h1>
+        <p>Enter your bonus AD and AS% to calculate the total damage. Tool does not take level increased stats into consideration</p>
+        <input id="bonus_ad" type="text" placeholder="Bonus AD">
+        <input id="bonus_as" type="text" placeholder="AS%">
+        <button onclick="calculateAndDisplay()">Calculate</button>
+        <p id="result"></p>
+        <p>Tool quickly put together by AutisticLulu</p>
+        <script src="script.js"></script>
+    </body>
 </html>
