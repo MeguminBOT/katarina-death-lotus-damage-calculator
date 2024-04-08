@@ -1,3 +1,55 @@
+var items = [
+    {name: 'Kraken Slayer', attackDamage: 40, attackSpeed: 35, icon: 'https://raw.githubusercontent.com/MeguminBOT/katarina-death-lotus-damage-calculator/main/items/krakenslayer.png'},
+    {name: 'Blade of the Ruined King', attackDamage: 40, attackSpeed: 25, icon: 'https://raw.githubusercontent.com/MeguminBOT/katarina-death-lotus-damage-calculator/main/items/botrk.png'},
+    // Add more items here...
+];
+
+function generateItemCheckboxes() {
+    var container = document.getElementById('items');
+    items.forEach(function(item, index) {
+        var checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = 'item' + index;
+        checkbox.onclick = function() {
+            updateBonusValues();
+        };
+
+        var label = document.createElement('label');
+        label.htmlFor = 'item' + index;
+        label.textContent = item.name;
+
+        var icon = document.createElement('img');
+        icon.src = item.icon;
+        icon.alt = item.name + ' icon';
+        icon.className = 'item-icon'; // You can style the icon using this class
+
+        container.appendChild(icon);
+        container.appendChild(checkbox);
+        container.appendChild(label);
+        container.appendChild(document.createElement('br'));
+    });
+}
+
+function updateBonusValues() {
+    var bonusAd = 0;
+    var bonusAs = 0;
+
+    items.forEach(function(item, index) {
+        var checkbox = document.getElementById('item' + index);
+        if (checkbox.checked) {
+            bonusAd += item.attackDamage;
+            bonusAs += item.attackSpeed;
+        }
+    });
+
+    document.getElementById('bonus_ad').value = bonusAd;
+    document.getElementById('bonus_as').value = bonusAs;
+}
+
+window.onload = function() {
+    generateItemCheckboxes();
+};
+
 function calculateAndDisplay() {
     var base_attack_speed = 0.658;
     var attack_speed_ratio = 0.658;
@@ -35,3 +87,5 @@ function calculateDeathLotusDamage(bonus_ad, bonus_as) {
     var total_damage = damage_multiplier * bonus_ad;
     return total_damage;
 }
+
+
