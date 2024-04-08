@@ -1,6 +1,9 @@
 var items = [
-    {name: 'Kraken Slayer', attackDamage: 40, attackSpeed: 35, icon: 'https://raw.githubusercontent.com/MeguminBOT/katarina-death-lotus-damage-calculator/main/items/krakenslayer.png'},
-    {name: 'Blade of the Ruined King', attackDamage: 40, attackSpeed: 25, icon: 'https://raw.githubusercontent.com/MeguminBOT/katarina-death-lotus-damage-calculator/main/items/botrk.png'},
+    {name: "Kraken Slayer", attackDamage: 40, attackSpeed: 35, icon: 'https://raw.githubusercontent.com/MeguminBOT/katarina-death-lotus-damage-calculator/main/items/krakenslayer.png'},
+    {name: "Blade of the Ruined King", attackDamage: 40, attackSpeed: 25, icon: 'https://raw.githubusercontent.com/MeguminBOT/katarina-death-lotus-damage-calculator/main/items/botrk.png'},
+    {name: "Guinsoo's Rageblade", attackDamage: 35, attackSpeed: 25, icon: NaN},
+    {name: "Wit's End", attackDamage: 0, attackSpeed: 55, icon: NaN},
+    {name: "Terminus", attackDamage: 40, attackSpeed: 30, icon: NaN},
     // Add more items here...
 ];
 
